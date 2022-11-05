@@ -5,7 +5,7 @@ header-img: img/home-bg-1.jpeg
 email: mapengfei@mail.nwpuedu.cn
 description: "这里是马鹏飞的个人博客，与你一起发现更大的世界 | 一个研究心脏的程序员"
 #url: "https://huangxuan.me" # your host, for absolute URL
-url: "https://shaoyaoqian.github.io" # your host, for absolute URL
+url: "https://www.pengfeima.cn" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
