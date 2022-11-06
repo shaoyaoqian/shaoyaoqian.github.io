@@ -5,26 +5,23 @@ header-mask:   0.5  # 因为标题是白色的，可以背景图片调暗
 ---
 
 {% for post in paginator.posts %}
+{% if post.hidden != true %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle">
+        <h3 class="post-content-preview">
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <div class="post-content-preview">
-            {% if post.description %}
-                {{ post.description }}
-            {% endif %}
-        </div>
     </a>
     <p class="post-meta">
         {{ post.date | date: "%Y年%m月%d日" }}
     </p>
 </div>
+{% endif %}
 <hr>
 {% endfor %}
 
