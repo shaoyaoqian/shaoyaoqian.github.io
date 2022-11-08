@@ -1,0 +1,38 @@
+<!-- 评论系统和页面访问量统计系统 -->
+
+
+{% if include.type == 'comments' %}
+    <!-- waline comments -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <hr>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="waline">
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+        访问量: <span class="waline-pageview-count" />
+    </div>
+    <script>
+        Waline.init({
+            el: '#waline',
+            pageview: true,
+            serverURL: 'https://{{ site.comments_domain }}',
+        });
+    </script>
+    <!-- waline comments -->
+{% endif %}
+
+{% if include.type == 'pageview-count' %}
+    <!-- waline pageview count -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+        <hr>
+        访问量: <span class="waline-pageview-count" />
+    </div>
+    <script>
+        Waline.pageviewCount({
+            serverURL: 'https://{{ site.comments_domain }}',
+            path: window.location.pathname,
+        });
+    </script>
+    <!-- waline pageview count -->
+{% endif %}
+

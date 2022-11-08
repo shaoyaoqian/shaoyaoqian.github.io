@@ -66,38 +66,16 @@ layout: default
             </div>
         {% endif %}
 
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
+        {% if page.comments %}
+            {% include comments.html type='comments' %}
+        {% else %}
+            {% include comments.html type='pageview-count' %}
+        {% endif %}
 
-                <!-- Featured Tags -->
-                {% include featured-tags.html bottom=true %}
-
-                <!-- Friends Blog -->
-                {% include friends.html %}
-            </div>
         </div>
     </div>
 </article>
 
-<!-- add support for mathjax by voleking-->
-{% if page.mathjax %}
-  {% include mathjax_support.html %}
-{% endif %}
-
-{% if page.comments %}
-<!-- waline comments -->
-<div id="waline"></div>
-<script>
-  Waline.init({
-    el: '#waline',
-    serverURL: 'https://{{ site.comments_domain }}',
-  });
-</script>
-<!-- waline comments -->
-{% endif %}
 
 
 {% if site.anchorjs %}
@@ -135,3 +113,5 @@ layout: default
     }
 </style>
 {% endif %}
+
+
