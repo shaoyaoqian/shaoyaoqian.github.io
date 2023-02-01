@@ -1,0 +1,65 @@
+
+# https://theme-next.js.org/docs/theme-settings/
+
+scheme: Gemini
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+
+darkmode: true
+
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+  android_manifest: /images/manifest.json
+
+custom_logo: /uploads/custom-logo.jpg
+
+
+creative_commons:
+  # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
+  license: by-nc-sa
+  # Available values: big | small
+  size: small
+  sidebar: true
+  post: true
+  language: deed.zh
+
+
+open_graph:
+  enable: true
+  # Add pairs each line to customize
+  options:
+    type: blog
+
+
+menu:
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+
+
+# menu:
+#   home: / || fa fa-home
+#   archives: /archives/ || fa fa-archive
+#   Docs:
+#     default: /docs/ || fa fa-book
+#     Getting Started:
+#       default: /getting-started/ || fa fa-flag
+#       Installation: /installation.html || fa fa-download
+#       Configuration: /configuration.html || fa fa-wrench
+#     Third Party Plugins:
+#       default: /third-party-services/ || fa fa-puzzle-piece
+#       Math Equations: /math-equations.html || fa fa-square-root-alt
+#       Comment Systems: /comments.html || fa fa-comment-alt
+
+
+menu_settings:
+  icons: true
