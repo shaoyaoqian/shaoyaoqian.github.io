@@ -15,7 +15,7 @@ favicon:
   safari_pinned_tab: /images/logo.svg
   android_manifest: /images/manifest.json
 
-custom_logo: /uploads/custom-logo.jpg
+custom_logo: /img/logo-blue.png
 
 
 creative_commons:
@@ -37,6 +37,14 @@ open_graph:
 
 menu:
   home: / || fa fa-home
+  life: /life/ || fas fa-pizza-slice
+  observer: /observer/ || fas fa-eye
+  notes: /notes/ || fas fa-book
+  culture: /culture/ || fas fa-guitar
+  album: /album/ || fas fa-camera-retro
+  guestbook: /guestbook/ || fas fa-splotch
+  #  default: /guestbook/ || fas fa-splotch
+  #  links: ../links/ || fas fa-link
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
@@ -63,3 +71,30 @@ menu:
 
 menu_settings:
   icons: true
+
+
+
+
+# ============================================================= #
+# ===================== Sidebar Settings ====================== #
+# ============================================================= #
+
+avatar:
+  url: /img/portrait.png
+  rounded: true
+
+site_state: false
+
+social:
+  微博: https://dlzhang.com/weibo || fa-brands fa-weibo
+  哔哩哔哩: https://dlzhang.com/bilibili || fa-brands fa-bilibili
+  RSS: /atom.xml || fas fa-rss
+
+social_icons:
+  icons_only: true
+
+toc:
+  number: false
+  wrap: true # 超出范围文字是否换行
+  max_depth: 3 # <h3> ###
+  expand_all: true
