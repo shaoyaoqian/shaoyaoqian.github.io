@@ -1,0 +1,26 @@
+/* 站点标题背景 */
+.site-brand-container {
+  background: url($site-brand-bg-url);
+//   background-position: 70% 20%;
+  background-size: contain;
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+  }
+}
+
+
+/* 全站背景 */
+body {
+  background-image: url($body-bg-url);
+  background-repeat: repeat;
+  background-size: contain;
+  //background-attachment: fixed;
+  if (hexo-config('darkmode')) {
+    @media (prefers-color-scheme: dark) {
+      background-image: none;
+    }
+  }
+}
+
+/* 评论框背景 */
+

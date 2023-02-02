@@ -5,8 +5,21 @@ scheme: Gemini
 #scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-
 darkmode: true
+custom_file_path:
+  # head: source/_data/head.njk
+  #header: source/_data/header.njk
+  #sidebar: source/_data/sidebar.njk
+  #postMeta: source/_data/post-meta.njk
+  # postBodyEnd: source/_data/post-body-end.njk
+  footer: source/_data/footer.html
+  # bodyEnd: source/_data/body-end.njk
+  variable: source/_data/variables.styl
+  # mixin: source/_data/mixins.styl
+  style: source/_data/styles.styl
+
+
+
 
 favicon:
   small: /images/favicon-16x16-next.png
@@ -98,3 +111,16 @@ toc:
   wrap: true # 超出范围文字是否换行
   max_depth: 3 # <h3> ###
   expand_all: true
+
+# ============================================================= #
+# ====================== Footer Settings ====================== #
+# ============================================================= #
+
+footer:
+  since: 2017
+  icon:
+    name: fas fa-heart
+    animated: true
+    color: "#f06292"
+  copyright: Shaoyaoqian
+  powered: false
