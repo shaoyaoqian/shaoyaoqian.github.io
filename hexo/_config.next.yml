@@ -175,17 +175,10 @@ math:
   mathjax:
     enable: true
     tags: ams
-pjax: true
-fancybox: true
+pjax: false
+fancybox: false
 lazyload: false
 pangu: true
-
-# Umami Analytics
-# See: https://umami.is/
-umami:
-  enable: true
-  script_url: https://stat.pinlyu.com/script.js
-  website_id: dfd4ef79-619d-4b55-b84e-981fd43cefa9
 
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:

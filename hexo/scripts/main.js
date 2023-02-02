@@ -12,14 +12,10 @@ hexo.extend.tag.register('dot', function (args) {
     return `<span class="emphasis-point">${args.join(' ')}</span>`;
 });
 
-
-{/* <a data-fancybox="dn961z8hc88" data-caption="3711669695359_.pic" target="_blank" rel="noopener" href="https://githubimages.pengfeima.cn/images/202211291217546.jpg" data-pjax-state=""><img no-lazy="" data-src="https://githubimages.pengfeima.cn/images/compressed/202211291217546.webp" alt="3711669695359_.pic" src="https://githubimages.pengfeima.cn/images/compressed/202211291217546.webp" data-loaded="true"></a> */}
-{/* <a class="fancybox fancybox.image" href="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="group" rel="group" data-caption="台湾阿里山" title="台湾阿里山"><img data-src="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" src="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" alt="台湾阿里山" data-loaded="true"></a> */}
-
 // 相册
 hexo.extend.tag.register('gallery', 
   function(args, content) {
-    // TODO : 解析这些参数，并在 main.js 文件中调用。
+    // TODO : 解析这些参数并在 main.js 文件中调用。
     // args = ctx.args.map(args, ['captions', 'rowHeight', 'maxRowCount', 'margins', 'border', 'lastRow']);
     var el = '';
     var id = Math.random().toString(36).slice(2);

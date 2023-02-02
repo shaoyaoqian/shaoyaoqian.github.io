@@ -2,12 +2,8 @@
 console.log('前端代码');
 
 
-// 加载 Fancybox 和 Justified Gallery
+// Justified Gallery
 const gallery = {
-    fancybox : {
-        'js': 'https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js',
-        'css': 'https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css'
-    },
     justifiedGallery : {
         'js': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js',
         'css': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/css/justifiedGallery.min.css'
@@ -101,41 +97,25 @@ loadjQuery = (fn) => {
     }
 }
 
-loadFancybox = (fn) => {
-if (typeof  Fancybox === 'undefined') {
-    loadCSS(gallery.fancybox.css);
-    loadScript(gallery.fancybox.js).then(fn);
-    } else {
-        fn()
-    }
-}
-
 function justified_gallery(container){
     $(container).justifiedGallery( 
         {
-            lastRow : 'left', 
-            captions: false,
-            margins : 3,
-            border: -1
+          lastRow : 'left', 
+          captions: false,
+          margins : 3,
+          border: -1
         }
-    ).on('jg.complete', function () {
-        Fancybox.bind(container+" a", {
-        caption: function (fancybox, carousel, slide) {
-            // return `<center>${slide.index + 1} / ${carousel.slides.length} <br></center>` + slide.caption
-            return slide.caption
-        }
-        });
-    });
+    )
 };
 
-loadCSS(gallery.justifiedGallery.css);
 loadjQuery(() => {
+  loadCSS(gallery.justifiedGallery.css);
   loadScript(gallery.justifiedGallery.js).then(()=>{
     var els = document.getElementsByClassName('tile-gallery');
     for (var i = 0; i<els.length; i++){
       var el = els[i];
       var id = "#" + el.getAttribute('id');
-      loadFancybox(()=>{justified_gallery(id)});
+      justified_gallery(id)
     }
   });
 });
