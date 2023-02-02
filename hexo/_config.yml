@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 频率
+title: 卮言
 subtitle: 风卷过的起点
 description: 爱美食/纪录片/夜猫子
-keywords: [班班, leirock, Hexo, blog, 博客, economics, pinlyu, 频率]
+keywords: [班班, leirock, Hexo, blog, 博客, economics, pinlyu, 卮言]
 author: 班班
 language: zh-CN
 timezone: Asia/Shanghai
@@ -131,4 +131,9 @@ deploy:
   type: git
   repository: git@github.com:shaoyaoqian/shaoyaoqian.github.io.git
   branch: main
+
+
+github:
+  repository: shaoyaoqian/shaoyaoqian.github.io
+  branch: source
 
