@@ -176,7 +176,7 @@ math:
     enable: true
     tags: ams
 pjax: false
-fancybox: false
+fancybox: true
 lazyload: false
 pangu: true
 

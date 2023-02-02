@@ -97,6 +97,7 @@ loadjQuery = (fn) => {
     }
 }
 
+// Fancybox 运行之后再运行 Justified Gallery
 function justified_gallery(container){
     $(container).justifiedGallery( 
         {
@@ -105,8 +106,20 @@ function justified_gallery(container){
           margins : 3,
           border: -1
         }
-    )
+    ).on('jp.complete', function () {
+      $.fancybox.defaults.hash = false;
+      $('.fancybox').fancybox({
+        loop   : true,
+        helpers: {
+          overlay: {
+            locked: false
+          }
+        }
+      });
+  });
 };
+
+
 
 loadjQuery(() => {
   loadCSS(gallery.justifiedGallery.css);
