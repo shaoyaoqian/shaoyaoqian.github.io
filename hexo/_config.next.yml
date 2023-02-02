@@ -45,7 +45,7 @@ favicon:
   safari_pinned_tab: /images/logo.svg
   android_manifest: /images/manifest.json
 
-custom_logo: /img/logo-blue.png
+# custom_logo: /img/logo-blue.png
 
 
 # ============================================================= #
@@ -61,7 +61,7 @@ menu:
   guestbook: /guestbook/ || fas fa-splotch
   #  default: /guestbook/ || fas fa-splotch
   #  links: ../links/ || fas fa-link
-  archives: /archives/ || fa fa-archive
+  archives: /timeline/ || fa fa-archive
 
 menu_settings:
   icons: true
@@ -147,12 +147,12 @@ back2top:
 # ============================================================= #
 # ======================= Font Settings ======================= #
 # ============================================================= #
-
+# https://github.com/chawyehsu/lxgw-wenkai-webfont
 font:
   enable: true
   global:
     external: false
-    family: LXGW WenKai Lite  # EB Garamond, Noto Serif SC
+    family: LXGW WenKai Lite # EB Garamond, Noto Serif SC
   title:
     external: false
     family: Long Cang
@@ -231,13 +231,6 @@ vendors:
   #custom_cdn_url: https://lib.baomitu.com/${cdnjs_name}/${version}/${cdnjs_file} #360 75CDN 海外亚马逊云
   #custom_cdn_url: https://jsd.pinlyu.com/npm/${npm_name}@${version}/${minified}
 
-
-# Assets
-# css - local
-# js - only valid when vendors.internal is local
-images: /resources/img/ # root /img/ folder
-
-
 # Waline
 # For more information: https://waline.js.org, https://github.com/walinejs/waline
 waline:
@@ -246,6 +239,7 @@ waline:
   locale:
     placeholder: 疑义相与析，畅所欲言，不登录也没关系哒 # #评论框的默认文字
   avatar: mm # 头像风格
+  darkmode: true
   meta: [nick,mail,link] # 自定义评论框上面的三个输入框的内容
   pageSize: 10 # 评论数量多少时显示分页
   lang: zh-cn # 语言, 可选值: en, zh-cn
