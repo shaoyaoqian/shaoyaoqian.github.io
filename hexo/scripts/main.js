@@ -13,16 +13,18 @@ hexo.extend.tag.register('dot', function (args) {
 });
 
 
-// 相册
-hexo.extend.tag.register('gallery', require('./lib/gallery')(hexo), true)
+{/* <a data-fancybox="dn961z8hc88" data-caption="3711669695359_.pic" target="_blank" rel="noopener" href="https://githubimages.pengfeima.cn/images/202211291217546.jpg" data-pjax-state=""><img no-lazy="" data-src="https://githubimages.pengfeima.cn/images/compressed/202211291217546.webp" alt="3711669695359_.pic" src="https://githubimages.pengfeima.cn/images/compressed/202211291217546.webp" data-loaded="true"></a> */}
+{/* <a class="fancybox fancybox.image" href="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="group" rel="group" data-caption="台湾阿里山" title="台湾阿里山"><img data-src="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" src="https://cos.pinlyu.com/album/landscape/台湾阿里山.webp" alt="台湾阿里山" data-loaded="true"></a> */}
 
-module.exports = ctx => function(args, content) {
+// 相册
+hexo.extend.tag.register('gallery', 
+  function(args, content) {
     // TODO : 解析这些参数，并在 main.js 文件中调用。
-    args = ctx.args.map(args, ['captions', 'rowHeight', 'maxRowCount', 'margins', 'border', 'lastRow']);
+    // args = ctx.args.map(args, ['captions', 'rowHeight', 'maxRowCount', 'margins', 'border', 'lastRow']);
     var el = '';
     var id = Math.random().toString(36).slice(2);
     function slide() {
-      let imgs = ctx.render.renderSync({text: content, engine: 'markdown'});
+      let imgs = hexo.render.renderSync({text: content, engine: 'markdown'});
       imgs = imgs.match(/<img(.*?)src="(.*?)"(.*?)>/gi);
       if (imgs && imgs.length > 0) {
         imgs.forEach((img, i) => {
@@ -38,7 +40,7 @@ module.exports = ctx => function(args, content) {
             var href_thumbnail = `https://githubimages.pengfeima.cn/images/compressed/${filename}webp`
             img = img.replace(href, href_thumbnail);
           }
-          el += '<a data-fancybox="' + id + '" data-caption="' + caption + '" href="' + href + '">';
+          el += '<a fancybox="true" data-fancybox="' + id + '" data-caption="' + caption + '" href="' + href + '">';
           el += img;
           el += '</a>';
         })
@@ -49,4 +51,7 @@ module.exports = ctx => function(args, content) {
     slide()
     el += '</div>'
     return el
-  }
+  }, 
+  {ends: true}
+)
+

@@ -177,7 +177,7 @@ math:
     tags: ams
 pjax: true
 fancybox: true
-lazyload: true
+lazyload: false
 pangu: true
 
 # Umami Analytics
