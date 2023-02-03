@@ -6,30 +6,60 @@ pid: 30
 license: false
 cc_license: true
 date: 2018-06-06 18:03:02
+
 ---
-转自 https://pinlyu.com/posts/30/
+
 
 最近把 [个人主页](https://dlzhang.com) 与 [博客](/) 都重新设计了，所以就打算写个总结，自己记录一下一些细节。虽然自认为不会有几个访客，但还是进行了相应的区别定位。个人主页主要是展现个人的简历、研究项目等内容，主要是个人展示目的；博客偏向于个性化一些，主要想进行一些生活日常或者研究过程等记录，也可以展现一些自己的兴趣爱好之类的东西。
 <!--more-->
 
 ## 1. 域名与解析
 
-购买到合适的域名之后，就需要把网站通过 DNS 解析到对应的域名上，我的网站 DNS 解析由 Cloudflare 提供。目前的个人主页与博客都放在 [Netlify](https://www.netlify.com) 上，由 Netlify 获取 GitHub 对应的项目仓库内容自动进行网站页面生成与部署。所以直接在 Netlify 对应的项目中添加好域名，再根据提示去设置解析。
+本网站使用了以下GitHub Vercel Cloudflare 又拍云四家公司提供的服务。GitHub生成和存储静态网站，Vercel提供网站托管服务，Cloudflare提供域名解析服务，又拍云提供CDN服务。
 
-![Cloudflare DNS 设置](https://cos.pinlyu.com/posts/2018/30-dns.webp#600x)
+### 1.1 GitHub设置
 
-上图中主机记录 `Name` 就是我们希望网站访问时的域名，如果我们的域名是 `example.com`，那么设置好主机记录后我们的访问域名也即 `主机记录.example.com`。当主机记录为 `@` 时，对应就是直接访问我们的根域名。记录值 `Value` 填写的是 Netlify 上对应项目的二级域名地址。
+创建一个shaoyaoqian.github.io的仓库，main分支存储网站的静态文件，source分支存储源码。
 
-设置好 DNS 解析后，还需要在域名注册商处把域名指向 Cloudflare 提供的两个 NameServer 解析服务器才可以正常访问。
+### 1.2 Vercel 设置
 
-采用 HTTPS 可以使得浏览数据更加安全，并防止网络运营商对网页进行劫持和插入广告。Netlify 提供由 Let's Encrypt 颁发的免费证书来开启强制 HTTPS，直接在管理界面就可以点击开启。对于部署在 GitHub Pages上的情况，只需要在 repository 的页面点击 Settings，在 `GitHub Pages` 下面把 `Enforce HTTPS` 打勾即可。
+1. 登陆Vercel以后，点击 [Add new...->project](https://vercel.com/new)
+2. 选择网站的代码仓库，点击import导入代码
+3. 配置项目，填写合适的项目名，点击Deploy部署
+   ![导入GitHub仓库](https://githubimages.pengfeima.cn/images/202302031219030.png)
+   ![配置并部署项目](https://githubimages.pengfeima.cn/images/202302031220581.png)
+4. 部署完成后，添加自定义域名
+   ![添加域名](https://githubimages.pengfeima.cn/images/202302031225453.png)
+5. 如果自己没有自已购买的域名，那么使用Vercel提供的域名即可，即图中的 shaoyaoqian-github-io-2enj.vercel.app 。后面的设置需使用自己的域名，若没有可略过后续步骤。
+   ![添加域名](https://githubimages.pengfeima.cn/images/202302031228930.png)
+   ![等待域名解析](https://githubimages.pengfeima.cn/images/202302031232250.png)
+
+
+### 1.3 域名解析
+
+我网站的域名解析由cloudflare提供，设置时对照填入即可。其他域名解析服务商的设置也是类似的。
+
+![添加域名解析](https://githubimages.pengfeima.cn/images/202302031215908.png)
+
+### 1.4 CDN服务
+
+国内访问需使用国内云服务商加速，我使用的是又拍云。
+
+1. 添加一条CDN服务。
+   ![又拍云CDN设置](https://githubimages.pengfeima.cn/images/202302031237980.png)
+2. 修改cloufare的解析
+   ![CNAME配置](https://githubimages.pengfeima.cn/images/202302031238165.png)
+   ![CNAME配置](https://githubimages.pengfeima.cn/images/202302031239386.png)
+
 
 ## 2. Hexo 初始化
 
 ### 2.1 环境配置
 
 {% note info %}
+
 #### 提示
+
 macOS 在编译时候可能会提示没有缺少 Command Line Tools，需要在终端输入 `xcode-select --install`，然后根据提示安装。
 {% endnote %}
 
@@ -161,18 +191,11 @@ git submodule add https://github.com/theme-next/hexo-theme-next themes/next
 下载主题文件后，打开博客根目录下的站点配置文件（`/_config.yml`），找到 `theme` 键值，将值修改为 `next` 即可。
 
 {% note warning %}
+
 #### 注意
+
 图片图标文件可以放到 `/themes/next/source/images/`（默认图标放在这里）或者 `/source/` 目录下。如果图标文件放至在 `/themes/next/source/images/` 目录下，务必注意不要和目录下的默认图标文件名一样，否则在生成静态文件的时候会被默认文件会覆盖。
 {% endnote %}
-
-### 3.2 站点地图
-
-要自动生成站点地图，可以执行以下命令，这样以后每次执行 `hexo g`，都会生成 `sitemap.xml`。
-
-```bash
-cd <blog-path>
-npm i hexo-generator-sitemap 
-```
 
 ### 3.3 与主题样式一致的404页面
 
@@ -275,6 +298,7 @@ npm uni hexo-generator-index && npm i hexo-generator-indexed
 19^th^
 H~2~O
 ```
+
 19^th^
 H~2~O
 
@@ -283,6 +307,7 @@ H~2~O
 ```markdown
 ++Inserted text++
 ```
+
 ++Inserted text++
 
 ### 4.3 段首空两格
@@ -308,6 +333,7 @@ Duplicated footnote reference[^second].
 
 [^second]: Footnote text.
 ```
+
 Footnote 1 link[^firstaa].
 
 Footnote 2 link[^second].
@@ -332,7 +358,9 @@ Duplicated footnote reference[^second].
 ```
 
 {% note %}
+
 #### Header
+
 (without define class style)
 {% endnote %}
 
@@ -344,7 +372,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note default %}
+
 #### Default Header
+
 Welcome to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -356,7 +386,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note primary %}
+
 #### Primary Header
+
 **Welcome** to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -368,7 +400,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note info %}
+
 #### Info Header
+
 **Welcome** to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -380,7 +414,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note success %}
+
 #### Success Header
+
 **Welcome** to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -392,7 +428,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note warning %}
+
 #### Warning Header
+
 **Welcome** to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -404,7 +442,9 @@ Welcome to [Hexo!](https://hexo.io)
 ```
 
 {% note danger %}
+
 #### Danger Header
+
 **Welcome** to [Hexo!](https://hexo.io)
 {% endnote %}
 
@@ -416,7 +456,9 @@ Note **without** icon: `note info no-icon`
 ```
 
 {% note info no-icon %}
+
 #### No icon note
+
 Note **without** icon: `note info no-icon`
 {% endnote %}
 
@@ -428,7 +470,9 @@ Note with summary: `note primary This is a summary`
 ```
 
 {% note primary This is a summary %}
+
 #### Details and summary
+
 Note with summary: `note primary This is a summary`
 {% endnote %}
 
@@ -440,6 +484,14 @@ Note with summary: `note info no-icon This is a summary`
 ```
 
 {% note info no-icon This is a summary %}
+
 #### Details and summary (No icon)
+
 Note with summary: `note info no-icon This is a summary`
 {% endnote %}
+
+
+
+
+
+转自 https://pinlyu.com/posts/30/ , 有修改。
