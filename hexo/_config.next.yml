@@ -232,7 +232,7 @@ waline:
   locale:
     placeholder: 疑义相与析，畅所欲言，不登录也没关系哒 # #评论框的默认文字
   avatar: mm # 头像风格
-  darkmode: true
+  dark: auto
   meta: [nick,mail,link] # 自定义评论框上面的三个输入框的内容
   pageSize: 10 # 评论数量多少时显示分页
   lang: zh-cn # 语言, 可选值: en, zh-cn
