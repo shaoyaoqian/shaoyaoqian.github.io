@@ -15,11 +15,11 @@ date: 2018-06-06 18:03:02
 
 ## 1. 域名与解析
 
-本网站使用了以下GitHub Vercel Cloudflare 又拍云四家公司提供的服务。GitHub生成和存储静态网站，Vercel提供网站托管服务，Cloudflare提供域名解析服务，又拍云提供CDN服务。
+本网站使用了GitHub Vercel Cloudflare 又拍云四家公司提供的服务。GitHub生成和存储静态网站，Vercel提供网站托管服务，Cloudflare提供域名解析服务，又拍云提供CDN服务。
 
 ### 1.1 GitHub设置
 
-创建一个shaoyaoqian.github.io的仓库，main分支存储网站的静态文件，source分支存储源码。
+创建一个名为shaoyaoqian.github.io的仓库，source分支存储源码，main分支存储由source分支生成的静态文件，静态文件通过GitHub Action生成。
 
 ### 1.2 Vercel 设置
 
