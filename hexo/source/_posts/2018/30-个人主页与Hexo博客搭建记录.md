@@ -3,10 +3,11 @@ title: 个人主页与 Hexo 博客搭建记录
 categories: [笔记]
 tags: [blog]
 pid: 30
+license: false
 cc_license: true
 date: 2018-06-06 18:03:02
 ---
-https://pinlyu.com/posts/30/
+转自 https://pinlyu.com/posts/30/
 
 最近把 [个人主页](https://dlzhang.com) 与 [博客](/) 都重新设计了，所以就打算写个总结，自己记录一下一些细节。虽然自认为不会有几个访客，但还是进行了相应的区别定位。个人主页主要是展现个人的简历、研究项目等内容，主要是个人展示目的；博客偏向于个性化一些，主要想进行一些生活日常或者研究过程等记录，也可以展现一些自己的兴趣爱好之类的东西。
 <!--more-->

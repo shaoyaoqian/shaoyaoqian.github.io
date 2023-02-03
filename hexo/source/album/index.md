@@ -6,4 +6,4 @@ categories: [相册]
 ---
 
 
-<div id="0xje8cj39d0e" class="justified-gallery"></div>
+<div id="0xje8cj39d0e" class="justified-gallery tile-galery"></div>
