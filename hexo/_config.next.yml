@@ -95,7 +95,7 @@ toc:
 # ============================================================= #
 
 footer:
-  since: 2017
+  since: 2023
   icon:
     name: fas fa-heart
     animated: true
@@ -144,26 +144,6 @@ back2top:
   scrollpercent: true
 
 
-# ============================================================= #
-# ======================= Font Settings ======================= #
-# ============================================================= #
-# https://github.com/chawyehsu/lxgw-wenkai-webfont
-font:
-  enable: true
-  global:
-    external: false
-    family: LXGW WenKai Lite # EB Garamond, Noto Serif SC
-  title:
-    external: false
-    family: Long Cang
-    size: 2.2
-  headings:
-    external: false
-    size: 1.6
-  codes:
-    external: false
-    family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
-
 
 # ============================================================= #
 # =============== Third Party Services Settings =============== #
@@ -173,7 +153,7 @@ font:
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
 math:
   mathjax:
-    enable: true
+    enable: false
     tags: ams
 pjax: false
 fancybox: true
@@ -208,7 +188,7 @@ tabs:
 # ============================================================= #
 
 motion:
-  enable: false
+  enable: true
 
 
 # ============================================================= #
@@ -239,4 +219,5 @@ waline:
   visitor: true # 文章阅读统计
   comment_count: true # 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示
   requiredFields: [] # 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]
-  libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js # Set custom library cdn url
+  libUrl: https://cdn.staticfile.org/waline/2.14.7/waline.min.js
+  cssUrl: https://cdn.staticfile.org/waline/2.14.7/waline.min.css

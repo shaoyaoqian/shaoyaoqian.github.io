@@ -48,6 +48,15 @@ date: 2018-06-06 18:03:02
   ![又拍云提供的CNAME](https://githubimages.pengfeima.cn/images/202302031827341.png)
   ![修改Cloudflare的域名解析](https://githubimages.pengfeima.cn/images/202302031825498.png)
 
+### 1.5 网站测速
+
+1. lighthouse
+```bash
+lighthouse https://www.example.com --view
+```
+2. 
+https://www.itdog.cn/http/
+
 
 ## 2. Hexo 初始化
 
