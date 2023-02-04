@@ -142,3 +142,16 @@ github:
   repository: shaoyaoqian/shaoyaoqian.github.io
   branch: source
 
+
+# Artalk
+## Config: https://artalk.js.org
+## Plugin: https://github.com/leirock/hexo-next-artalk
+artalk:
+  enable: true
+  server: https://artalk.pengfeima.cn/
+  jsUrl: https://comment.pinlyu.com/dist/Artalk.js
+  cssUrl: https://comment.pinlyu.com/dist/Artalk.css
+  commentCount: true
+  pvCount: false
+  darkMode: auto
+  useBackendConf: true

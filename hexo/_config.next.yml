@@ -59,8 +59,6 @@ menu:
   culture: /culture/ || fas fa-guitar
   album: /album/ || fas fa-camera-retro
   guestbook: /guestbook/ || fas fa-splotch
-  #  default: /guestbook/ || fas fa-splotch
-  #  links: ../links/ || fas fa-link
   archives: /timeline/ || fa fa-archive
 
 menu_settings:
@@ -77,9 +75,9 @@ avatar:
 site_state: false
 
 social:
-  微博: https://dlzhang.com/weibo || fa-brands fa-weibo
-  哔哩哔哩: https://dlzhang.com/bilibili || fa-brands fa-bilibili
-  RSS: /atom.xml || fas fa-rss
+  微博: https://www.weibo.com || fa-brands fa-weibo
+  哔哩哔哩: https://www.bilibili.com || fa-brands fa-bilibili
+  # RSS: /atom.xml || fas fa-rss
 
 social_icons:
   icons_only: true
@@ -157,7 +155,7 @@ math:
     tags: ams
 pjax: false
 fancybox: true
-lazyload: false
+lazyload: true
 pangu: true
 
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb

@@ -1,12 +1,6 @@
 // 后端
 console.log('后端代码');
 
-
-// 评论
-// TODO：在中加入评论元素中加入评论，和.post-block并列
-// 参考： https://github.com/walinejs/waline/commit/1364169c3583b24f47fbc14b4ef4ad325d803e51#diff-966ad5d6023a36421991fa4d4abf68625518a46b7227683a1436d29db493a71f
-
-
 // 着重号
 hexo.extend.tag.register('dot', function (args) {
     return `<span class="emphasis-point">${args.join(' ')}</span>`;
