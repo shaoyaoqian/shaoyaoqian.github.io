@@ -207,7 +207,7 @@ vendors:
 # Waline
 # For more information: https://waline.js.org, https://github.com/walinejs/waline
 waline:
-  enable: true #是否开启
+  enable: false #是否开启
   serverURL: waline.pengfeima.cn # Waline #服务端地址，我们这里就是上面部署的 Vercel 地址
   locale:
     placeholder: 疑义相与析，畅所欲言，不登录也没关系哒 # #评论框的默认文字

@@ -227,26 +227,3 @@ loadjQuery(() => {
 });
 
 
-
-// 更新waline配置，启动图片上传功能
-// https://waline.js.org/cookbook/reactivity.html
-// waline.update({
-//   imageUploader: function(file) {
-//     let headers = new Headers();
-//     headers.set('Accept', 'application/json');
-//     headers.set('token', '7aebca24b8ba799d3b9a4a71b3e2e8fc')
-//     let formData = new FormData();
-//     formData.append('<%= theme.comments.waline.imageUploader?.fileName %>', file);
-//     return fetch('https://img.ink/api/upload',{
-//         method: 'POST',
-//             body: formData,
-//             headers: headers
-//             }).then((resp) => resp.json())
-//               .then((resp) => resp.data.url)
-//     },
-//   }
-// );
-
-
-
-
