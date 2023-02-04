@@ -65,16 +65,30 @@ if(temp_comments.length){
 }
 
 
+const post_headers = document.getElementsByClassName('post-header');
+
+for (var i = 0; i<post_headers.length; i++){
+  post_header = post_headers[i];
+  var href = post_header.getElementsByTagName('h2')[0].getElementsByTagName('a')[0]['href'];
+  console.log(href);
+
+}
+
 
 // 评论数
-{/* <span class="post-meta-item"> 
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-    <a title="waline" href="/posts/undefined/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/posts/undefined/" itemprop="commentCount">1</span>
-    </a>
-</span> */}
+// 1. 先获取链接
+// post-header -> h2 -> a -> href
+// 2. 再在post-meta-container中添加元素
+// post-header -> post-meta-container -> [post-meta] appendchild
+// 3. 元素的格式为
+// <span class="post-meta-item">
+//   <span class="post-meta-item-icon">
+//     <i class="far fa-comment"></i>
+//   </span>
+//   <span class="post-meta-item-text">Waline：</span>
+//   <a title="waline" href="/posts/10838/#waline" itemprop="discussionUrl">
+//     <span class="post-comments-count waline-comment-count" data-path="/posts/10838/" itemprop="commentCount">0</span>
+//   </a>
+// </span>
   
   

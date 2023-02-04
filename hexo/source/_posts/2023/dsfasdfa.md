@@ -2,6 +2,7 @@
 layout: post
 title: Hello World
 comments: true
+abbrlink: 16107
 ---
 相册
 

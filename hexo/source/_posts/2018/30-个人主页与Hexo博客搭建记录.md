@@ -1,12 +1,14 @@
 ---
 title: 个人主页与 Hexo 博客搭建记录
-categories: [笔记]
-tags: [blog]
-pid: 30
+categories:
+  - 笔记
+tags:
+  - blog
 license: false
 cc_license: true
-date: 2018-06-06 18:03:02
 comments: false
+abbrlink: 26586
+date: 2028-06-06 18:03:02
 ---
 
 最近参考了 [班班](https://pinlyu.com/posts/30/) 的博客重新设计了自己的博客，打算写个总结。我认为博客的内容最重要，而不是形式，因此本站的风格偏向于简洁。
