@@ -5,8 +5,8 @@
 # Site
 title: 卮言
 # subtitle: 风卷过的起点
-description: 爱美食/纪录片/夜猫子
-keywords: [拖拖, leirock, Hexo, blog, 博客, economics, pinlyu, 卮言]
+description: 爱美食/看电影/自行车
+keywords: [拖拖, shaoyaoqian, Hexo, blog, 博客, 卮言]
 author: 拖拖
 language: zh-CN
 timezone: Asia/Shanghai
@@ -149,9 +149,17 @@ github:
 artalk:
   enable: true
   server: https://artalk.pengfeima.cn/
-  jsUrl: https://comment.pinlyu.com/dist/Artalk.js
-  cssUrl: https://comment.pinlyu.com/dist/Artalk.css
+  jsUrl: https://artalk.pengfeima.cn/dist/Artalk.js
+  cssUrl: https://artalk.pengfeima.cn/dist/Artalk.css
   commentCount: true
-  pvCount: false
+  pvCount: true
   darkMode: auto
   useBackendConf: true
+
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html

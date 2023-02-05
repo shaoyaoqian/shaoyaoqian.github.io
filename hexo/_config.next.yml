@@ -56,10 +56,10 @@ menu:
   life: /life/ || fas fa-pizza-slice
   observer: /observer/ || fas fa-eye
   notes: /notes/ || fas fa-book
-  culture: /culture/ || fas fa-guitar
-  album: /album/ || fas fa-camera-retro
-  guestbook: /guestbook/ || fas fa-splotch
-  archives: /timeline/ || fa fa-archive
+  # culture: /culture/ || fas fa-guitar
+  # album: /album/ || fas fa-camera-retro
+  # guestbook: /guestbook/ || fas fa-splotch
+  # archives: /timeline/ || fa fa-archive
 
 menu_settings:
   icons: true
@@ -95,7 +95,7 @@ toc:
 footer:
   since: 2023
   icon:
-    name: fas fa-heart
+    name: 
     animated: true
     color: "#f06292"
   copyright: 拖拖
@@ -160,7 +160,7 @@ pangu: true
 
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
 
 
 # ============================================================= #
