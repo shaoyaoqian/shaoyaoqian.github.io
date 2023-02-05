@@ -155,7 +155,7 @@ math:
     tags: ams
 pjax: false
 fancybox: true
-lazyload: true
+lazyload: false
 pangu: true
 
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
@@ -202,20 +202,3 @@ vendors:
   #custom_cdn_url: https://lib.baomitu.com/${cdnjs_name}/${version}/${cdnjs_file} #360 75CDN 海外亚马逊云
   #custom_cdn_url: https://jsd.pinlyu.com/npm/${npm_name}@${version}/${minified}
 
-# Waline
-# For more information: https://waline.js.org, https://github.com/walinejs/waline
-waline:
-  enable: false #是否开启
-  serverURL: waline.pengfeima.cn # Waline #服务端地址，我们这里就是上面部署的 Vercel 地址
-  locale:
-    placeholder: 疑义相与析，畅所欲言，不登录也没关系哒 # #评论框的默认文字
-  avatar: mm # 头像风格
-  dark: auto
-  meta: [nick,mail,link] # 自定义评论框上面的三个输入框的内容
-  pageSize: 10 # 评论数量多少时显示分页
-  lang: zh-cn # 语言, 可选值: en, zh-cn
-  visitor: true # 文章阅读统计
-  comment_count: true # 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示
-  requiredFields: [] # 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]
-  libUrl: https://cdn.staticfile.org/waline/2.14.7/waline.min.js
-  cssUrl: https://cdn.staticfile.org/waline/2.14.7/waline.min.css
