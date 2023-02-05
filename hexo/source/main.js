@@ -204,7 +204,7 @@ loadjQuery(() => {
     loadScript(gallery.justifiedGallery.js).then(()=>{
     var cfg = new Object();
     cfg.api = "https://api.github.com/repos/shaoyaoqian/shaoyaoqian.github.io/contents/hexo/source/img/album-zhoujielun?ref=source";
-    cfg.cdn = "https://raw.githubusercontent.com/shaoyaoqian/shaoyaoqian.github.io/source/hexo/source/img/album-zhoujielun/"
+    cfg.cdn = "https://www.pengfeima.cn/img/album-zhoujielun/"
     cfg.id  = "0xje8cj39d0e";
     if (document.getElementById(cfg.id)) {
       InfiniteScrollGallery.layoutDiv(cfg);
