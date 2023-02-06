@@ -282,6 +282,22 @@ Facybox 和 Justified Gallery
 ![3561669695358_.pic](https://githubimages.pengfeima.cn/images/202211291217112.jpg)
 {% endgallery %}
 
+### 3.9 Latex 公式
+参考Next主题的[文档](https://theme-next.js.org/docs/third-party-services/math-equations)，使用Katex渲染公式。先更换markdown解释器，再修改配置文件。
+
+``` bash
+npm un hexo-renderer-markdown-it
+npm i hexo-renderer-markdown-it-plus --save
+```
+
+``` yml _config.next.yml
+math:
+  every_page: false
+  katex:
+    enable: true
+    copy_tex: false
+```
+
 ## 4. MarkDown 参考
 
 ### 4.1 上下标

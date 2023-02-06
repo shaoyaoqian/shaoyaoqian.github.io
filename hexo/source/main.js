@@ -2,13 +2,13 @@
 console.log('前端代码');
 
 // Justified Gallery
-const gallery = {
+var gallery = {
     justifiedGallery : {
         'js': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js',
         'css': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/css/justifiedGallery.min.css'
     }
 }
-let loadCSS = (href, before, media, attributes) => {
+var loadCSS = (href, before, media, attributes) => {
     var doc = window.document;
     var ss = doc.createElement("link");
     var ref;
@@ -66,11 +66,11 @@ let loadCSS = (href, before, media, attributes) => {
     return ss;
   };
 
-let loadScript = (src, opt) => new Promise((resolve, reject) => {
+var loadScript = (src, opt) => new Promise((resolve, reject) => {
   var script = document.createElement('script');
   script.src = src;
   if (opt) {
-      for (let key of Object.keys(opt)) {
+      for (var key of Object.keys(opt)) {
       script[key] = opt[key]
       }
   } else {
@@ -79,7 +79,7 @@ let loadScript = (src, opt) => new Promise((resolve, reject) => {
   }
   script.onerror = reject
   script.onload = script.onreadystatechange = function() {
-      const loadState = this.readyState
+      var loadState = this.readyState
       if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
       script.onload = script.onreadystatechange = null
       resolve()
@@ -87,7 +87,7 @@ let loadScript = (src, opt) => new Promise((resolve, reject) => {
   document.head.appendChild(script)
 });
 
-let loadjQuery = (fn) => {
+var loadjQuery = (fn) => {
 if (typeof jQuery === 'undefined') {
     loadScript('https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js').then(fn)
 } else {
@@ -95,12 +95,12 @@ if (typeof jQuery === 'undefined') {
 }
 };
 
-let loadUrl = (url, callback, timeout) => {
-  let retryTimes = 5;
+var loadUrl = (url, callback, timeout) => {
+  var retryTimes = 5;
   function request() {
     return new Promise((resolve, reject) => {
-      let status = 0; // 0 等待 1 完成 2 超时
-      let timer = setTimeout(() => {
+      var status = 0; // 0 等待 1 完成 2 超时
+      var timer = setTimeout(() => {
         if (status === 0) {
           status = 2;
           timer = null;
@@ -161,9 +161,9 @@ function justified_gallery(container){
 });
 };
 
-const InfiniteScrollGallery = {
+var InfiniteScrollGallery = {
   layoutDiv: (cfg) => {
-    const el = $(cfg.el)[0];
+    var el = $(cfg.el)[0];
     $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
     loadUrl(cfg.api, function(data) {
       $(el).find('.loading-wrap').remove();

@@ -152,11 +152,17 @@ back2top:
 
 # Math Formulas Render Support
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
+# Math Formulas Render Support
 math:
-  mathjax:
-    enable: false
-    tags: ams
-pjax: false
+  every_page: false
+  katex:
+    enable: true
+    copy_tex: false
+
+# Easily enable fast Ajax navigation on your website.
+# For more information: https://github.com/next-theme/pjax
+pjax: true
+
 fancybox: true
 lazyload: false
 pangu: true
