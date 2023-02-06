@@ -44,10 +44,10 @@ date: 2023-02-02
 ### 1.4 又拍云
 国内用户访问网站需使用国内云服务商提供的CDN加速服务，本站使用的是又拍云加速。
 1. 创建CDN服务
-  ![创建CDN服务](https://githubimages.pengfeima.cn/images/202302031237980.png)
+    ![创建CDN服务](https://githubimages.pengfeima.cn/images/202302031237980.png)
 2. 修改cloufare的解析
-  ![又拍云提供的CNAME](https://githubimages.pengfeima.cn/images/202302031827341.png)
-  ![修改Cloudflare的域名解析](https://githubimages.pengfeima.cn/images/202302031825498.png)
+    ![又拍云提供的CNAME](https://githubimages.pengfeima.cn/images/202302031827341.png)
+    ![修改Cloudflare的域名解析](https://githubimages.pengfeima.cn/images/202302031825498.png)
 
 ### 1.5 网站测速
 
@@ -65,10 +65,10 @@ https://www.itdog.cn/http/
 
 {% note info %}
 #### 提示
-macOS 在编译时候可能会提示没有缺少 Command Line Tools，需要在终端输入 `xcode-select --install`，然后根据提示安装。
+`npm`需要配置国内源
 {% endnote %}
 
-要使用 Hexo NexT 主题的博客，需要先配置好环境，安装 [Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/downloads)。安装完成后，在终端中输入以下命令安装 Hexo：
+要使用 Hexo NexT 主题的博客，需要先安装 [Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/downloads)。安装完成后，在终端中输入以下命令安装 Hexo：
 
 ```bash
 npm install -g hexo-cli
@@ -90,7 +90,6 @@ npm install
 新建完成后，指定文件夹的目录中：
 
 - `_config.yml` 站点配置文件，具体配置的说明可以查看相关 [文档](https://hexo.io/zh-cn/docs/configuration.html)。
-- `themes` 主题文件夹，Hexo 会根据主题来生成静态页面。
 - `source` 文件夹是存放用户资源的地方，Markdown 和 HTML 文件会被解析并放到 `public` 文件夹，而其他文件会被复制过去（如 `CNAME` 文件）。
 
 ### 2.2 新建文章与页面
@@ -140,7 +139,7 @@ deploy:
 
 ```bash
 # 首次部署要先执行以下命令安装插件
-npm i hexo-deployer-git
+npm i hexo-deployer-git --save
 
 # 部署网站
 hexo deploy
@@ -156,51 +155,25 @@ hexo s -g
 hexo g -d
 ```
 
-### 2.4 添加文章命令后自动打开编辑器
+### 2.4 GitHub Actions自动部署（TODO）
 
-参考：[Hexo添加文章时自动打开编辑器 - Doublemine](https://notes.wanghao.work/2015-06-29-Hexo添加文章时自动打开编辑器.html)
-
-在**站点**文件夹根目录新建文件夹 `scripts`，然后在文件夹内新建文件 `openeditor.js`：
-
-```javascript
-//Windows
-var spawn = require('child_process').exec;
-hexo.on('new', function(data){
-	spawn('start  "markdown编辑器绝对路径.exe" ' + data.path);
-});
-
-//macOS
-var exec = require('child_process').exec;
-hexo.on('new', function(data){
-	exec('open -a "markdown编辑器绝对路径.app" ' + data.path);
-});
-```
+1. 密钥文件
+2. `main.yml`文件
 
 ## 3. 博客主题自定义
 
 ### 3.1 修改主题
 
-可以执行以下命令下载主题文件，当然也可以从 GitHub [直接下载](https://github.com/theme-next/hexo-theme-next/releases) 最新版本压缩包，解压后将文件放在 `/themes/next` 目录下面。
+执行以下命令安装主题。
 
 ```bash
-cd <blog-path>  #定位到 Hexo 博客目录
-git clone https://github.com/theme-next/hexo-theme-next themes/next
+npm install hexo-theme-next --save
 ```
 
-另一种是通过添加子模块的方法载入主题文件：
 
-```bash
-git submodule add https://github.com/theme-next/hexo-theme-next themes/next
-```
+主题安装后，打开博客根目录下的站点配置文件（`/_config.yml`），找到 `theme` 键值，将值修改为 `next` 。
 
-下载主题文件后，打开博客根目录下的站点配置文件（`/_config.yml`），找到 `theme` 键值，将值修改为 `next` 即可。
-
-{% note warning %}
-#### 注意
-图片图标文件可以放到 `/themes/next/source/images/`（默认图标放在这里）或者 `/source/` 目录下。如果图标文件放至在 `/themes/next/source/images/` 目录下，务必注意不要和目录下的默认图标文件名一样，否则在生成静态文件的时候会被默认文件会覆盖。
-{% endnote %}
-
-### 3.3 与主题样式一致的404页面
+### 3.3 404页面
 
 要生成一个和主题样式一致的404页面，首先需要新建一个页面：
 
@@ -219,7 +192,7 @@ permalink: /404
 ---
 ```
 
-### 3.4 修改文章永久性链接
+### 3.4 文章永久链接
 
 这里使用插件 `hexo-abbrlink` 来生成博客文章的永久链接，可以查看该插件的 [GitHub 项目页面](https://github.com/Rozbo/hexo-abbrlink)。
 
@@ -248,7 +221,7 @@ npm uni hexo-generator-index && npm i hexo-generator-indexed
 
 然后在需要置顶的文章的开头添加 `sticky: true` 控制文章置顶：
 
-### 3.7 Wline评论
+### 3.6 Waline评论（废弃）
 
 1. [自建mysql数据库并开放端口](https://blog.csdn.net/litble/article/details/127049181)
 {% note info %}
@@ -277,9 +250,11 @@ db.close()
 {% endnote %}
 2. docker 后端
 3. [Nginx 管理器](https://github.com/NginxProxyManager/nginx-proxy-manager)
-  ![Nginx 管理器](https://githubimages.pengfeima.cn/images/202302041235461.png)
+    ![Nginx 管理器](https://githubimages.pengfeima.cn/images/202302041235461.png)
 4. 使用img.ink图床，开启评论区图片上传
 5. 文章列表显示文章阅读量和评论数量
+
+### 3.7 Artalk评论(TODO)
 
 ### 3.8 相册
 
@@ -483,8 +458,3 @@ Note with summary: `note info no-icon This is a summary`
 #### Details and summary (No icon)
 Note with summary: `note info no-icon This is a summary`
 {% endnote %}
-
-
-
-
-
