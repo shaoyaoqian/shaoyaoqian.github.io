@@ -297,7 +297,13 @@ math:
     enable: true
     copy_tex: false
 ```
+### 3.10 Pjax
 
+有时候页面跳转，只需刷新网页的一部分，不需要重新加载整个网页，`pjax`功能使得浏览器可以进行这样的操作。开启`pjax`功能后，自行添加的Javascript脚本需要加上`data-pjax`属性，确保页面跳转后脚本文件会重新执行。
+
+``` html
+<script data-pjax src="/main.js"></script>
+```
 ## 4. MarkDown 参考
 
 ### 4.1 上下标
