@@ -72,7 +72,7 @@ avatar:
   url: /img/portrait.png
   rounded: true
 
-site_state: false
+site_state: true
 
 social:
   微博: https://weibo.com/u/5336841337 || fa-brands fa-weibo
@@ -85,8 +85,9 @@ social:
 social_icons:
   icons_only: true
 
+
 toc:
-  number: false
+  number: true
   wrap: true # 超出范围文字是否换行
   max_depth: 3 # <h3> ###
   expand_all: true
@@ -142,7 +143,8 @@ codeblock:
     style: flat
 
 back2top:
-  scrollpercent: true
+  enable: false
+  scrollpercent: false
 
 
 
