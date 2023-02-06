@@ -75,8 +75,11 @@ avatar:
 site_state: false
 
 social:
-  微博: https://www.weibo.com || fa-brands fa-weibo
-  哔哩哔哩: https://www.bilibili.com || fa-brands fa-bilibili
+  微博: https://weibo.com/u/5336841337 || fa-brands fa-weibo
+  # 哔哩哔哩: https://www.bilibili.com || fa-brands fa-bilibili
+  GitHub: https://github.com/shaoyaoqian || fa-brands fa-github
+  # 微信: https://www.bilibili.com || fa-brands fa-weixin
+  邮件: mailto:499908174@qq.com || fa-solid fa-envelope
   # RSS: /atom.xml || fas fa-rss
 
 social_icons:
