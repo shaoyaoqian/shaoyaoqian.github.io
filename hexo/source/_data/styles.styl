@@ -1164,9 +1164,14 @@ img.fancybox-image { width:100%; }
 
 /* 站点标题背景 */
 .site-brand-container {
-  background: #fbb929;
-  @media (prefers-color-scheme: dark) {
-    background: #158bb8;
+  background-image: url($site-brand-bg-url);
+  // filter: brightness(50%);
+  // background: #fbb929;
+  h1 {
+    color: black;
+  }
+  p {
+    color: black;
   }
 }
 

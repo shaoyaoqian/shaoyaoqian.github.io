@@ -28,9 +28,9 @@ custom_file_path:
 # ============================================================= #
 
 scheme: Gemini
-#scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+# scheme: Muse
+# scheme: Mist
+# scheme: Pisces
 darkmode: true
 
 
@@ -53,9 +53,9 @@ favicon:
 # ============================================================= #
 
 menu:
-  life: /life/ || fas fa-pizza-slice
-  observer: /observer/ || fas fa-eye
-  notes: /notes/ || fas fa-book
+  life: /categories/life/ || fas fa-pizza-slice
+  observer: /categories/observer/ || fas fa-eye
+  notes: /categories/notes/ || fas fa-book
   # culture: /culture/ || fas fa-guitar
   # album: /album/ || fas fa-camera-retro
   # guestbook: /guestbook/ || fas fa-splotch
@@ -68,6 +68,13 @@ menu_settings:
 # ===================== Sidebar Settings ====================== #
 # ============================================================= #
 
+sidebar:
+  position: right
+  # display: post
+  # display: always
+  display: hide
+  # display: remove
+  
 avatar:
   url: /img/portrait.png
   rounded: false
