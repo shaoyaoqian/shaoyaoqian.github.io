@@ -1,20 +1,10 @@
 module.exports = [
   {
-    path: 'blobcat',
-    prefix: 'blob-',
-    baseUrl: 'https://www.pengfeima.cn/img/emojis/blobcat',
-    twikoo: {
-      name: `Blobcat`
-    },
+    path: 'Food',
+    prefix: 'food-',
+    baseUrl: 'https://www.pengfeima.cn/img/emojis/Food',
     artalk: {
-      name: `Blobcat`
+      name: `Food`
     },
-    waline: {
-      name: 'Blobcat',
-      icon: 'blob.png'
-    },
-    discuss: {
-      name: `Blobcat`
-    }
   }
 ]

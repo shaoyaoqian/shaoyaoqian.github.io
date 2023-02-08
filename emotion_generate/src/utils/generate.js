@@ -103,5 +103,5 @@ function discuss(nameList, config) {
   return result
 }
 
-const generateUtils = { twikoo, valine, waline, artalk, discuss }
+const generateUtils = { artalk }
 module.exports = generateUtils
