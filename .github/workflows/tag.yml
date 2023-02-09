@@ -1,11 +1,9 @@
-name: Tag release
+name: Weekly release
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-  push:
-    branches:
-      - source
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
 
 
 jobs:
@@ -20,7 +18,7 @@ jobs:
     steps:
       - name: Create tag
         run: |
-          echo "date=$(date +%Y%m%d%h)" >> $GITHUB_ENV
+          echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
 
       - name: Create release
         id: step_two
@@ -39,8 +37,6 @@ jobs:
           tag_name: ${{ env.date }}
           release_name: Release ${{ env.date }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            Weekly release
           draft: false
           prerelease: false   

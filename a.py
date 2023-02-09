@@ -62,4 +62,4 @@ if release:
 else:
     print('Error: unable to retrieve latest release')
 
-upload_file_to_release_id(release_id, 'a.py')
+upload_file_to_release_id(release_id, 'GitHub Desktop.zip')
