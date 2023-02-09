@@ -7,9 +7,6 @@ on:
     branches:
       - source
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -23,3 +20,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
+    
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Weekly Release
+        draft: false
+        prerelease: false
