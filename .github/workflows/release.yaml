@@ -8,6 +8,12 @@ on:
       - source
   workflow_dispatch:
 
+
+env:
+  GIT_USER: shaoyaoqian
+  GIT_EMAIL: mpf_npu@icloud.com
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
