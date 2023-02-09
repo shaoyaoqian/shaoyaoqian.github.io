@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Create tag
         run: |
-          echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
+          echo "date=$(date +%Y%m%d%h)" >> $GITHUB_ENV
 
       - name: Create release
         id: step_two
