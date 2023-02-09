@@ -1,5 +1,3 @@
-<input type="file" id="fileInput">
-
 {### 前端 ###}
 <script {{pjax}} src="/main.js"></script>
 
@@ -11,7 +9,8 @@
 <script src="/musicplayer.js"></script>
 
 
-{### GitHub ###}
+{### Upload files to GitHub ###}
+<input type="file" id="fileInput">
 <script type="module">
   import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
   var owner = "shaoyaoqian"
@@ -64,10 +63,10 @@
   }
 
   
-  document.querySelector("#fileInput").addEventListener("change", async function() {
-    const file = this.files[0];
-    await uploadFile(file);
-  });
+  // document.querySelector("#fileInput").addEventListener("change", async function() {
+  //   const file = this.files[0];
+  //   await uploadFile(file);
+  // });
 
 
 
