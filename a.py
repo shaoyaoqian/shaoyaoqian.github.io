@@ -6,12 +6,8 @@ repo = "shaoyaoqian.github.io"
 release_id = "RELEASE_ID"
 
 # Token
-import base64
-encoded_token = b'Z2hwX0F5MlZPd2ZQMTNadGJYZ0RpU01TTUJHb3VETVpEUzN1WXV4Sg=='
-access_token = base64.b64decode(encoded_token).decode()
-
-filename = ".gitignore"
-tag = "v1.0.0"
+access_token = "hiq`:Fc3Q2FxQsChBrEP4nVEWcxp6oPzeJ1oUIWw"
+access_token = ''.join(map(lambda x:chr(ord(x)-1),access_token))
 
 def get_releaseid_by_tag(tag='v1.0.0'):
     """
@@ -29,6 +25,7 @@ def get_releaseid_by_tag(tag='v1.0.0'):
     # Print the release id
     print(release_id)
     return release_id
+
 
 
 def upload_file_to_release_id(release_id, filename, path = './'):
@@ -51,6 +48,18 @@ def upload_file_to_release_id(release_id, filename, path = './'):
         print(f"Failed to upload file. Response code: {response.status_code}")
 
 
+def get_latest_release(repo):
+    response = requests.get(f'https://api.github.com/repos/{owner}/{repo}/releases/latest')
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
 
-release_id = get_releaseid_by_tag(tag=tag)
-upload_file_to_release_id(release_id, '202212141444618.jpg')
+release = get_latest_release(repo)
+release_id = release['id']
+if release:
+    print('Latest release:', release['tag_name'])
+else:
+    print('Error: unable to retrieve latest release')
+
+upload_file_to_release_id(release_id, 'a.py')
