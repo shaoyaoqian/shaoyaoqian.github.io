@@ -49,6 +49,11 @@ jobs:
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
 
+      - name: Create tag
+        run: |
+          git tag "release-$(date +%Y%m%d)"
+          git push origin "release-$(date +%Y%m%d)"
+      
       - name: Deploy hexo
         run: |
           cd hexo
