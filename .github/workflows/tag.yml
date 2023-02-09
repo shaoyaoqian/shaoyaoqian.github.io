@@ -6,12 +6,23 @@ on:
   push:
     branches:
       - source
+
+
 jobs:
-  release-on-push:
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [16.x]
+
     steps:
-      - uses: rymndhng/release-on-push-action@master
-        with:
-          bump_version_scheme: minor
+      - name: Create tag
+        run: |
+          echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}" # This will output 'yellow'
+      
