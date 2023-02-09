@@ -21,8 +21,26 @@ jobs:
       - name: Create tag
         run: |
           echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
-      - name: Use the value
+
+      - name: Create release
         id: step_two
         run: |
-          echo "${{ env.action_state }}" # This will output 'yellow'
+          echo "${{ env.date }}" # This will output 'yellow'
       
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ env.date }}
+          release_name: Release ${{ env.date }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false   
