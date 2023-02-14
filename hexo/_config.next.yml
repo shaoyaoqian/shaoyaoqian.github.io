@@ -10,6 +10,10 @@
 # Remove unnecessary files after hexo generate.
 minify: true
 
+# Allow to cache content generation.
+cache:
+  enable: false
+
 custom_file_path:
   head: source/_data/head.njk
   header: source/_data/header.njk
@@ -38,15 +42,15 @@ darkmode: true
 # ================= Site Information Settings ================= #
 # ============================================================= #
 
+# Favicon Generator: https://realfavicongenerator.net/
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
-  # android_manifest: /images/manifest.json
+  small: /img/favicon/favicon-16x16.png
+  medium: /img/favicon/favicon-32x32.png
+  apple_touch_icon: /img/favicon/apple-touch-icon.png
+  safari_pinned_tab: /img/favicon/safari-pinned-tab.svg
+  android_manifest: /img/favicon/site.webmanifest
 
-# custom_logo: /img/logo-blue.png
-
+# custom_logo: /img/favicon/android-chrome-256x256.png
 
 # ============================================================= #
 # ======================= Menu Settings ======================= #
@@ -57,7 +61,7 @@ menu:
   observer: /categories/observer/ || fas fa-eye
   notes: /categories/notes/ || fas fa-book
   # culture: /culture/ || fas fa-guitar
-  # album: /album/ || fas fa-camera-retro
+  album: /album/ || fas fa-camera-retro
   # guestbook: /guestbook/ || fas fa-splotch
   # archives: /timeline/ || fa fa-archive
 
