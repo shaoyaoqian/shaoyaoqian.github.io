@@ -68,9 +68,16 @@ https://www.itdog.cn/http/
 `npm`需要配置国内源
 {% endnote %}
 
-要使用 Hexo NexT 主题的博客，需要先安装 [Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/downloads)。安装完成后，在终端中输入以下命令安装 Hexo：
+要使用 Hexo NexT 主题的博客，需要先安装 [Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/downloads)。在MacOS中可以通过homebrew安装
 
 ```bash
+brew install npm
+```
+
+安装完成后，修改软件源，然后再在终端中输入以下命令安装 Hexo：
+
+```bash
+npm config set registry https://registry.npm.taobao.org
 npm install -g hexo-cli
 ```
 
@@ -157,8 +164,8 @@ hexo g -d
 
 ### 2.4 GitHub Actions自动部署（TODO）
 
-1. 密钥文件
-2. `main.yml`文件
+1. 添加密钥
+2. 修改`main.yml`文件
 
 ## 3. 博客主题自定义
 
@@ -188,7 +195,7 @@ hexo new page "404"
 ---
 title: 404 Not Found
 comments: false
-permalink: /404
+permalink: /40 4
 ---
 ```
 
