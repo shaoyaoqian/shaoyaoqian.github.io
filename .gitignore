@@ -1,2 +1,5 @@
 
 .DS_Store
+/largefiles/
+
+!largefiles/upload_large_files.py
