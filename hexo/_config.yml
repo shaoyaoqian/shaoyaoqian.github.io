@@ -150,7 +150,7 @@ artalk:
   jsUrl: https://artalk.pengfeima.cn/dist/Artalk.js
   cssUrl: https://artalk.pengfeima.cn/dist/Artalk.css
   commentCount: true
-  pvCount: true
+  pvCount: false
   darkMode: auto
   useBackendConf: true
 
