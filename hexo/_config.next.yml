@@ -62,7 +62,7 @@ menu:
   notes: /categories/notes/ || fas fa-book
   # culture: /culture/ || fas fa-guitar
   album: /album/ || fas fa-camera-retro
-  # guestbook: /guestbook/ || fas fa-splotch
+  guestbook: /guestbook/ || fas fa-splotch
   # archives: /timeline/ || fa fa-archive
 
 menu_settings:
