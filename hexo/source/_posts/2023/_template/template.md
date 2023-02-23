@@ -9,6 +9,6 @@ cc_license: false
 date: {{date}} {{time}}
 ---
 <div id='empty'></div>
-<div></div>
+<div id='empty'></div>
 <!--more-->
 
