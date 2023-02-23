@@ -2,4 +2,5 @@
 .DS_Store
 /largefiles/
 
-!largefiles/upload_large_files.py
+
+hexo/source/_posts/2023/.obsidian
