@@ -19,7 +19,7 @@ jobs:
       - name: Create tag
         run: |
           echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
-          echo "${GITHUB_REF#refs/heads/}"
+
 
       - name: Create release
         id: step_two

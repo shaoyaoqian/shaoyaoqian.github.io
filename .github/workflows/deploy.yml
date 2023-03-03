@@ -30,8 +30,7 @@ jobs:
       - name: Branch name
         run: |
           echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
-          echo "${GITHUB_REF#refs/heads/}"
-
+          
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
