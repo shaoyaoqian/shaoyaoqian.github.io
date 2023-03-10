@@ -99,9 +99,9 @@ social_icons:
 
 
 toc:
-  number: true
-  wrap: true # 超出范围文字是否换行
-  max_depth: 3 # <h3> ###
+  number: false
+  wrap: false # 超出范围文字是否换行
+  max_depth: 4 # <h4> ####
   expand_all: true
 
 # ============================================================= #
