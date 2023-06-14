@@ -13,7 +13,7 @@ toc:
 {% tabs Payment %}
 
 <!-- tab 微信@fa-brands fa-weixin -->
-![使用微信扫描]()
+![使用微信扫描](https://githubimages.pengfeima.cn/images/202306140823832.jpg)
 <!-- endtab -->
 <!-- tab PayPal@fa-brands fa-paypal -->
 ![使用支付宝扫描]()
