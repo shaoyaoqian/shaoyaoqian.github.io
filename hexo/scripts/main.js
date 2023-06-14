@@ -6,6 +6,15 @@ hexo.extend.tag.register('dot', function (args) {
     return `<span class="emphasis-point">${args.join(' ')}</span>`;
 });
 
+
+// 友链列表
+hexo.extend.tag.register('linklist', function (args) {
+  const iconSrc = 'https://cos.pinlyu.com/links/' + args + '/';
+  const jsonSrc = 'https://githubimages.pengfeima.cn/json/NEXT/'+args + '.json';
+  return `<div class="link-list" icon-src="${iconSrc}" json-src="${jsonSrc}"></div>`;
+});
+
+
 // 相册
 hexo.extend.tag.register('gallery', 
   function(args, content) {

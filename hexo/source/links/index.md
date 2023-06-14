@@ -4,6 +4,21 @@ comments: false
 ---
 
 
+{% tabs links %}
+
+<!-- tab 生活向@fas fa-umbrella-beach -->
+{% linklist life %}
+<!-- endtab -->
+
+<!-- tab 技术向@fas fa-code-branch -->
+{% linklist tech %}
+<!-- endtab -->
+
+<!-- tab 收藏夹@fas fa-bookmark -->
+{% linklist lib %}
+<!-- endtab -->
+{% endtabs %}
+
 * * *
 
 <div class="text-center" style="font-size: 1.1em;font-weight:bold">
