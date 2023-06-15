@@ -143,8 +143,8 @@ var loadUrl = (url, callback, timeout) => {
 function justified_gallery(container){
   $(container).justifiedGallery( 
       {
-        lastRow : 'left', 
-        captions: false,
+        lastRow : 'center', 
+        captions: true,
         margins : 3,
         border: -1
       }

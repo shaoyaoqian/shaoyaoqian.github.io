@@ -224,7 +224,7 @@ font:
   headings:
     external: false
     family: LXGW WenKai
-    size: 0.6
+    size: 1.6
   codes:
     external: false
     family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
