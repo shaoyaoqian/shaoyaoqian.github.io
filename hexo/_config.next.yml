@@ -217,10 +217,11 @@ font:
   global:
     external: false
     family: LXGW WenKai  # EB Garamond, Noto Serif SC
+    size: 1.0
   title:
     external: false
     family: LXGW WenKai
-    size: 2.2
+    size: 2.5
   headings:
     external: false
     family: LXGW WenKai
