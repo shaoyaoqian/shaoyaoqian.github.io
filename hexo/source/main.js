@@ -232,14 +232,24 @@ loadjQuery(() => {
 
 // 画折线图
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
-  Chart.defaults.font = {
-    family: 'LXGW WenKai',
-    size: 20,
-    style: 'normal',
-    lineHeight: 1.2
-  };
+  Chart.defaults.font.family = 'LXGW WenKai';
+  //   family: 'LXGW WenKai',
+  //   size: ,
+  // //   style: 'normal',
+  // //   lineHeight: 1.2
+  // };
   const ctx = document.getElementById('myChart');
   const labels = [
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
+    "","","","","","","",
     "","","","","","","",
     "","","","","","","",
     "","","","","","","",
@@ -299,9 +309,6 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
           title: {
             display: true,
             text: '2023年6月18日-2023年7月13日',
-            font: {
-              size: 20,
-            },
             padding: {top: -20, left: 0, right: 0, bottom: 0}
           }
         },
@@ -311,8 +318,8 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
             display: true,
             text: '体重(千克)'
           },
-          suggestedMin: 60,
-          suggestedMax: 70
+          suggestedMin: 55,
+          suggestedMax: 75
         }
       }
 
