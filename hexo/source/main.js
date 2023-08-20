@@ -234,13 +234,12 @@ loadjQuery(() => {
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
   Chart.defaults.font.family = 'LXGW WenKai';
   const ctx = document.getElementById('myChart');
-  const labels = ['8月15日', '8月18日'];
-
-  data_e_money = [121.72,127.49];
-  data_e_consume = [160.4,168.6];
-  data_oil_money = [200,200];
-  data_oil_consume = [11.4,11.5];
-  data_distance = [1115,1171];
+  const labels = ['8月15日', '8月18日','8月19日'];
+  data_e_money = [121.72,127.49,129.17];
+  data_e_consume = [160.4,168.6,171.1];
+  data_oil_money = [200,200,200];
+  data_oil_consume = [11.4,11.5,11.5];
+  data_distance = [1115,1171,1183];
 
   data_money = [];
   data_all_money = [];
@@ -284,7 +283,7 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
       {
         label: '平均',
         data: data_money,
-        yAxisID: 'y1',
+        yAxisID: 'y',
       },
       {
         label: '里程',
