@@ -234,12 +234,12 @@ loadjQuery(() => {
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
   Chart.defaults.font.family = 'LXGW WenKai';
   const ctx = document.getElementById('myChart');
-  const labels = ['8月15日', '8月18日','8月19日','8月20日'];
-  data_e_money = [121.72,127.49,129.17,140.40];
-  data_e_consume = [160.4,168.6,171.1,187.1];
-  data_oil_money = [200,200,200,200];
-  data_oil_consume = [11.4,11.5,11.5,11.8];
-  data_distance = [1115,1171,1183,1308];
+  const labels = ['8月15日', '8月18日','8月19日','8月20日','8月20日'];
+  data_e_money = [121.72,127.49,129.17,140.40,241.17];
+  data_e_consume = [160.4,168.6,171.1,187.1,188.2];
+  data_oil_money = [200,200,200,200,200];
+  data_oil_consume = [11.4,11.5,11.5,11.8,11.8];
+  data_distance = [1115,1171,1183,1308,1316];
 
   data_money = [];
   data_all_money = [];
@@ -268,27 +268,37 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
       {
         label: '电费',
         data: data_e_money,
-        yAxisID: 'y1',
+        yAxisID: 'y',        
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
       },
       {
         label: '电量',
         data: data_e_consume,
         yAxisID: 'y1',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
       },
       {
         label: '油量',
         data: data_oil_consume,
         yAxisID: 'y1',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
       },
       {
         label: '平均',
         data: data_money,
         yAxisID: 'y',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
       },
       {
         label: '里程',
         data: data_distance,
         yAxisID: 'y1',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
       }
     ]
   };

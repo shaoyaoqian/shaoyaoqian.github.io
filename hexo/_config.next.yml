@@ -80,7 +80,7 @@ menu_settings:
 #   # display: remove
   
 avatar:
-  url: /img/portrait.png
+  url: /img/portrait.jpg
   rounded: false
   rotated: false
 
