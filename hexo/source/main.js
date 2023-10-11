@@ -234,12 +234,12 @@ loadjQuery(() => {
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
   Chart.defaults.font.family = 'LXGW WenKai';
   const ctx = document.getElementById('myChart');
-  const labels = ['8月15日', '8月18日','8月19日','8月20日','8月20日','8月15日'];
-  data_e_money = [121.72,    127.49,  129.17,   140.40,  241.17,   241.17];
-  data_e_consume = [160.4,   168.6,   171.1,    187.1,   188.2,  188.2];
-  data_oil_money = [200,     200,     200,      200,     200,200];
-  data_oil_consume = [11.4,  11.5,    11.5,     11.8,    11.8,     11.8];
-  data_distance = [1115,     1171,    1183,     1308,    1316, 1720];
+  const labels = ['8月15日', '8月18日','8月19日','8月20日','8月20日','8月15日','9月30日'];
+  data_e_money = [121.72,    127.49,  129.17,   140.40,  241.17,   241.17,   241.17];
+  data_e_consume = [160.4,   168.6,   171.1,    187.1,   188.2,  268.2,  268.2];
+  data_oil_money = [200,     200,     200,      200,     200,    200,200];
+  data_oil_consume = [11.4,  11.5,    11.5,     11.8,    11.8,   12.4, 12.4];
+  data_distance = [1115,     1171,    1183,     1308,    1316,   1849, 2013];
 
   data_money = [];
   data_all_money = [];
@@ -275,14 +275,14 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
       {
         label: '电量',
         data: data_e_consume,
-        yAxisID: 'y1',
+        yAxisID: 'y',
         cubicInterpolationMode: 'monotone',
         spanGaps: true,
       },
       {
         label: '油量',
         data: data_oil_consume,
-        yAxisID: 'y1',
+        yAxisID: 'y',
         cubicInterpolationMode: 'monotone',
         spanGaps: true,
       },
