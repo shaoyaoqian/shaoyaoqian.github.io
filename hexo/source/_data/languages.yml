@@ -6,6 +6,7 @@ zh-CN:
     notes: 笔记 #笔记本
     album: 光影 #光影集
     guestbook: 留言 #留言板
+    research: 科研
     # search: 搜索 #搜文章
   sidebar:
     toc: 目 录
