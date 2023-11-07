@@ -12,10 +12,10 @@
     "version": "6.3.0"
   },
   "dependencies": {
-    "@waline/hexo-next": "^3.0.1",
     "hexo": "^6.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-all-minifier": "^0.5.7",
+    "hexo-blog-encrypt": "^3.1.9",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -27,6 +27,6 @@
     "hexo-renderer-markdown-it-plus": "^1.0.6",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "^8.14.2"
+    "hexo-theme-next": "^8.18.2"
   }
 }
