@@ -56,7 +56,7 @@ body {
 /* 侧边圆角 */
 .header, //顶部标题
 .sidebar-inner { //侧边头像
-  border-radius: $myradius;
+  border-radius: $myradius !important;
 }
 
 .site-brand-container {
@@ -986,6 +986,21 @@ pre[class*=language-] {
   --at-color-bg: $body-bg-color-dark !important;
 }
 
+/* 通知中心四个字 */
+.artalk>.atk-list>.atk-list-header .atk-text {
+  display: block !important;
+}
+
+/* IP地址 */
+.atk-comment > .atk-main > .atk-header .atk-region-badge {
+    display: inline-block;
+    margin-right: 6px;
+    color: var(--at-color-meta);
+    background: var(--at-color-bg-grey);
+    padding: 0px 6px;
+    line-height: 17px;
+    border-radius: 3px;
+}
 @media (prefers-color-scheme: dark) {
   .atk-list-read-more .atk-list-read-more-inner,
   .atk-comment .atk-height-limit-btn {

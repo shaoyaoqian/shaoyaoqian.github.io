@@ -62,6 +62,7 @@ menu:
   notes: /categories/notes/ || fas fa-book
   # culture: /culture/ || fas fa-guitar
   album: /album/ || fas fa-camera-retro
+  research: /categories/research/ || fas fa-vial
   guestbook: /guestbook/ || fas fa-splotch
   # archives: /timeline/ || fa fa-archive
 
@@ -80,7 +81,7 @@ menu_settings:
 #   # display: remove
   
 avatar:
-  url: /img/portrait.png
+  url: /img/portrait.jpg
   rounded: false
   rotated: false
 

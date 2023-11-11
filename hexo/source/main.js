@@ -233,107 +233,133 @@ loadjQuery(() => {
 // 画折线图
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
   Chart.defaults.font.family = 'LXGW WenKai';
-  //   family: 'LXGW WenKai',
-  //   size: ,
-  // //   style: 'normal',
-  // //   lineHeight: 1.2
-  // };
   const ctx = document.getElementById('myChart');
-  const labels = [
-    "2023年6月18日","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-    "","","","","","","",
-  ];
-  const data_1 = [
-    70, 69.6, 69.3, 69, 68.6, 68.3, 68,
-    68, 67.6, 67.3, 67, 66.6, 66.3, 66,
-    66, 65.6, 65.3, 65, 64.6, 64.3, 64,
-    64, 63.6, 63.3, 63, 62.6, 62.3, 62,
-    62, 62,   62,   62, 62,   62,   62,
-    62, 62,   62,   62, 62,   62,   62,
-    62, 62,   62,   62, 62,   62,   62,
-  ];
-  [
-    "2023年6月18日","19","20","21","22","23","24",
-    "25","26","27","28","29","29","30",
-    "2023年7月1日","2","3","4","5","6",
-    "7","8","9","10","11","12","13",
-  ];
-  const data_2 = [
-    70.00, 69.80, 
-  ];
-  const data_3 = [
-    70.25, null, 70.60, 
-  ];
+  const labels = ['8月15日', '8月18日','8月19日','8月20日','8月20日','8月15日','9月30日', '10月14日', '11月9日'];
+  data_e_money = [121.72,    127.49,  129.17,   140.40,  241.17,   241.17,   241.17, 241.17, 361.17];
+  data_e_consume = [160.4,   168.6,   171.1,    187.1,   188.2,    268.2,    268.2,  315.9,  381.7];
+  data_oil_money = [200,     200,     200,      200,     200,      200,      200,    200,    200];
+  data_oil_consume = [11.4,  11.5,    11.5,     11.8,    11.8,     12.4,     12.4,   12.7,   14.7];
+  data_distance = [1115,     1171,    1183,     1308,    1316,     1849,     2013,   2121,   2583];
+
+  data_money = [];
+  data_all_money = [];
+  for (let index = 0; index < data_e_money.length; index++) {
+    data_money.push((data_e_money[index] + data_oil_money[index])/data_distance[index]);
+    data_all_money.push(data_e_money[index] + data_oil_money[index]);
+  }
+
+  const data_1 = {
+    labels: labels,
+    datasets: [
+      {
+        label: '总费用',
+        data: data_all_money,
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+        yAxisID: 'y',
+      },
+      {
+        label: '油费',
+        data: data_oil_money,
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+        yAxisID: 'y',
+      },
+      {
+        label: '电费',
+        data: data_e_money,
+        yAxisID: 'y',        
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+      },
+      {
+        label: '电量',
+        data: data_e_consume,
+        yAxisID: 'y',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+      },
+      {
+        label: '油量',
+        data: data_oil_consume,
+        yAxisID: 'y',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+      },
+      {
+        label: '平均',
+        data: data_money,
+        yAxisID: 'y',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+      },
+      {
+        label: '里程',
+        data: data_distance,
+        yAxisID: 'y1',
+        cubicInterpolationMode: 'monotone',
+        spanGaps: true,
+      }
+    ]
+  };
+
   const config_1 = {
     type: 'line',
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: '预期',
-          data: data_1,
-          cubicInterpolationMode: 'monotone',
-          // tension: 100
-          spanGaps: true,
-        },
-        {
-          label: '早晨',
-          data: data_2,
-          cubicInterpolationMode: 'monotone',
-          spanGaps: true,
-        },
-        {
-          label: '晚上',
-          data: data_3,
-          cubicInterpolationMode: 'monotone',
-          spanGaps: true,
-        }
-      ]
-    },
+    data: data_1,
     options: {
       responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      stacked: false,
       plugins: {
         title: {
           display: true,
-          text: '2023年减肥计划',
+          text: '2023年行车费用',
+                      
+          font: {
+            size: 20,
+            weight: 'bold',
+          },
           padding: {top: 0, left: 0, right: 0, bottom: 20}
 
         },
       },
       scales: {
         x: {
-          display: true,
+          display: false,
           title: {
             display: true,
-            text: '2023年6月18日-2023年7月13日',
-            padding: {top: -20, left: 0, right: 0, bottom: 0}
+            // text: '图1：啊啊啊',
+            padding: {top: 10, left: 0, right: 0, bottom: 10}
           }
         },
         y: {
+          type: 'linear',
           display: true,
+          position: 'left',
           title: {
             display: true,
-            text: '体重(千克)'
+            text: '油/电费(元)'
           },
-          suggestedMin: 55,
-          suggestedMax: 75
-        }
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: '里程(公里)'
+          },
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
       }
-
-    }
-  }
+    },
+  };
   new Chart(ctx, config_1);
 
 });
