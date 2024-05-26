@@ -230,16 +230,16 @@ loadjQuery(() => {
 loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(() => {
   Chart.defaults.font.family = 'LXGW WenKai';
   const ctx = document.getElementById('myChart');
-  const labels = ['8月15日', '8月18日','8月19日','8月20日','8月20日','8月15日','9月30日', '10月14日', '11月9日', '11月11日', '12月7日', '12月14日', '12月21日', '2024年1月6日','1月18日', '2月21日', '2月25日',  '3月16日', '4月18日', '5月3日', '5月6日'];
-  data_e_money = [121.72,    127.49,  129.17,   140.40,  241.17,   241.17,   241.17, 241.17,     361.17,   370.99,     383,      433,        533,       533,          533,      533,      533,        640.5,    640.5,     640.5,   644.3];
-  data_e_consume = [160.4,   168.6,   171.1,    187.1,   188.2,    268.2,    268.2,  315.9,      381.7,    425.8,      475.5,    513.7,      565.9,     614.5,        666.6,    736.2,    773.4,      831.6,    896.2,     946.0,   963.7];
-  data_oil_money = [200,     200,     200,      200,     200,      200,      200,    200,        200,      200,        200,      200,        300,       300,          300,      400,      400,        400,      400,       400,     400];
-  data_oil_consume = [11.4,  11.5,    11.5,     11.8,    11.8,     12.4,     12.4,   12.7,       14.7,     17.1,       18.9,     19.3,       19.8,      21.9,         22.5,     25.9,     30.5,       31,       31.5,      32.4,    34.5];
-  data_distance = [1115,     1171,    1183,     1308,    1316,     1849,     2013,   2121,       2583,     2844,       3159,     3243,       3425,      3656,         3863,     4113,     4346,       4765,     5202,      5490,    5775];
+  const labels = ['8月15日', '8月18日', '8月19日', '8月20日', '8月20日', '8月15日', '9月30日', '10月14日', '11月9日', '11月11日', '12月7日', '12月14日', '12月21日', '2024年1月6日', '1月18日', '2月21日', '2月25日', '3月16日', '4月18日', '5月3日', '5月6日','5月27日'];
+  data_e_money = [121.72, 127.49, 129.17, 140.40, 241.17, 241.17, 241.17, 241.17, 361.17, 370.99, 383, 433, 533, 533, 533, 533, 533, 640.5, 640.5, 640.5, 644.3, 851.3];
+  data_e_consume = [160.4, 168.6, 171.1, 187.1, 188.2, 268.2, 268.2, 315.9, 381.7, 425.8, 475.5, 513.7, 565.9, 614.5, 666.6, 736.2, 773.4, 831.6, 896.2, 946.0, 963.7, 1016.5];
+  data_oil_money = [200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 300, 300, 300, 400, 400, 400, 400, 400, 400,400];
+  data_oil_consume = [11.4, 11.5, 11.5, 11.8, 11.8, 12.4, 12.4, 12.7, 14.7, 17.1, 18.9, 19.3, 19.8, 21.9, 22.5, 25.9, 30.5, 31, 31.5, 32.4, 34.5,34.7];
+  data_distance = [1115, 1171, 1183, 1308, 1316, 1849, 2013, 2121, 2583, 2844, 3159, 3243, 3425, 3656, 3863, 4113, 4346, 4765, 5202, 5490, 5775,6133];
   data_money = [];
   data_all_money = [];
   for (let index = 0; index < data_e_money.length; index++) {
-    data_money.push((data_e_money[index] + data_oil_money[index])/data_distance[index]);
+    data_money.push((data_e_money[index] + data_oil_money[index]) / data_distance[index]);
     data_all_money.push(data_e_money[index] + data_oil_money[index]);
   }
 
@@ -263,7 +263,7 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
       {
         label: '电费',
         data: data_e_money,
-        yAxisID: 'y',        
+        yAxisID: 'y',
         cubicInterpolationMode: 'monotone',
         spanGaps: true,
       },
@@ -312,12 +312,12 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
         title: {
           display: true,
           text: '2023年行车费用',
-                      
+
           font: {
             size: 20,
             weight: 'bold',
           },
-          padding: {top: 0, left: 0, right: 0, bottom: 20}
+          padding: { top: 0, left: 0, right: 0, bottom: 20 }
 
         },
       },
@@ -327,7 +327,7 @@ loadScript("https://cdn.staticfile.org/Chart.js/4.3.0/chart.umd.min.js").then(()
           title: {
             display: true,
             // text: '图1：啊啊啊',
-            padding: {top: 10, left: 0, right: 0, bottom: 10}
+            padding: { top: 10, left: 0, right: 0, bottom: 10 }
           }
         },
         y: {
