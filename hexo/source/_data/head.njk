@@ -1,4 +1,28 @@
-{### Font Family ###}
-{# <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="all" /> #}
+{### 全站灰色滤镜 ###}
+{% if config.gray_filter %}
+  <style>
+    html {
+      filter: grayscale(85%) saturate(80%);
+      -webkit-filter: grayscale(85%) saturate(80%);
+      -moz-filter: grayscale(85%) saturate(80%);
+      -ms-filter: grayscale(85%) saturate(80%);
+      -o-filter: grayscale(85%) saturate(80%);      
+    }
+    
+    @media (prefers-color-scheme: light) {
+      body {
+        background-image: none;
+        background: #d2d2d2;
+      }
+    }
+  </style>
+{% endif %}
 
-<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-light.css" media="all" />
+{### Font Family ###}
+<link rel="stylesheet" href="/resources/fonts/longcang/LongCang-Regular.css" >
+<link rel="stylesheet" href="https://cdn.staticfile.net/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" >
+
+{###
+<link rel="stylesheet" href="/resources/fonts/lxgw/LXGWWenKaiLite-Bold.css" >
+<link rel="stylesheet" href="/resources/fonts/lxgw/LXGWWenKaiLite-Regular.css" >
+###}

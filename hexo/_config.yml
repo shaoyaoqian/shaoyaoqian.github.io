@@ -6,8 +6,8 @@
 title: 卮言
 subtitle: 只能短暂 所以大嚷
 description: 爱美食/看电影/去旅行
-keywords: [拖拖, shaoyaoqian, Hexo, blog, 博客, 卮言]
-author: 拖拖
+keywords: [我家宝宝, shaoyaoqian, Hexo, blog, 博客, 卮言]
+author: 我家宝宝
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -18,7 +18,7 @@ abbrlink:
   rep: dec    # support dec(default) and hex
 url: https://www.pengfeima.cn
 root: /
-permalink: posts/:category/:abbrlink/
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -48,17 +48,24 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
+# Syntax highlight
+## https://hexo.io/zh-cn/docs/syntax-highlight
+syntax_highlighter: prismjs #highlight.js
 highlight:
-  enable: false
+  auto_detect: false
   line_number: false
-  auto_detect: true
-  tab_replace: true
+  line_threshold: 0
+  tab_replace: ''
+  exclude_languages:
+    - example
   wrap: true
   hljs: false
+## https://prismjs.com/download.html
 prismjs:
-  enable: true
   preprocess: true
   line_number: false
+  line_threshold: 0
   tab_replace: ''
 
 # Home page setting
@@ -92,16 +99,17 @@ time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
 updated_option: 'mtime' # do not use file modified time as updated time
 
-# # Pagination
-# ## Set per_page to 0 to disable pagination
-# per_page: 15
-# pagination_dir: page
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 15
+pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
   - _posts/2023/template/*
+  - _data_old
 ignore:
 
 # Extensions
@@ -130,6 +138,9 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
 
+# 灰色滤镜
+gray_filter: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -137,11 +148,9 @@ deploy:
   repository: git@github.com:shaoyaoqian/shaoyaoqian.github.io.git
   branch: main
 
-
 github:
   repository: shaoyaoqian/shaoyaoqian.github.io
   branch: source
-
 
 # Artalk
 ## Config: https://artalk.js.org
@@ -151,10 +160,12 @@ artalk:
   server: https://artalk.pengfeima.cn/
   jsUrl: https://artalk.pengfeima.cn/dist/Artalk.js
   cssUrl: https://artalk.pengfeima.cn/dist/Artalk.css
+  site: 卮言
   commentCount: true
   pvCount: false
   darkMode: auto
   useBackendConf: true
+
 
 
 # Search
