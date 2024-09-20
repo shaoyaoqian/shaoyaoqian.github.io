@@ -55,6 +55,7 @@ menu:
   album: /album/ || fas fa-camera-retro
   research: /categories/research/ || fas fa-vial
   guestbook: /guestbook/ || fas fa-splotch
+  links: /links/ || fa-solid fa-user-group
   # archives: /timeline/ || fa fa-archive
 
 menu_settings:
