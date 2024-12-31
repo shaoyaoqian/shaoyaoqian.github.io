@@ -157,9 +157,9 @@ github:
 ## Plugin: https://github.com/leirock/hexo-next-artalk
 artalk:
   enable: true
-  server: https://artalk.pengfeima.cn/
-  jsUrl: https://artalk.pengfeima.cn/dist/Artalk.js
-  cssUrl: https://artalk.pengfeima.cn/dist/Artalk.css
+  server: https://comments.pengfeima.cn/
+  jsUrl: https://comments.pengfeima.cn/dist/Artalk.js
+  cssUrl: https://comments.pengfeima.cn/dist/Artalk.css
   site: 卮言
   commentCount: true
   pvCount: false
