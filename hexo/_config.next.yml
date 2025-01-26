@@ -101,12 +101,12 @@ toc:
 # ============================================================= #
 
 footer:
-  since: 2023
+  since: 2022
   icon:
     name: 
     animated: true
     color: "#f06292"
-  copyright: Pengfei Ma
+  copyright: Pengfei Ma<br> <a href=https://beian.miit.gov.cn/>浙ICP备2022032946号</a> 
   powered: false
 
 # ============================================================= #

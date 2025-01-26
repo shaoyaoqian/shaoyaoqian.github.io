@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 卮言
+title: 离疯狂最近的地方
 subtitle: 只能短暂 所以大嚷
 description: 爱美食/看电影/去旅行
 keywords: [我家宝宝, shaoyaoqian, Hexo, blog, 博客, 卮言]
@@ -160,7 +160,7 @@ artalk:
   server: https://comments.pengfeima.cn/
   jsUrl: https://comments.pengfeima.cn/dist/Artalk.js
   cssUrl: https://comments.pengfeima.cn/dist/Artalk.css
-  site: 卮言
+  site: 离疯狂最近的地方
   commentCount: true
   pvCount: false
   darkMode: auto
