@@ -189,7 +189,7 @@ math:
 pjax: true
 fancybox: true
 lazyload: true
-pangu: true
+pangu: false
 
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
